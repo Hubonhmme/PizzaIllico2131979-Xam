@@ -11,16 +11,17 @@
     <StackLayout>
         <ListView ItemsSource="{Binding Shops}"
                   SelectionMode="None"
-                  >
+                  Margin="5"
+                  RowHeight="70">
             <ListView.Behaviors>
                 <extensions:ListViewItemTappedBehavior Command="{Binding SelectedCommand}" CommandParameter="{Binding .}"/>
             </ListView.Behaviors>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell x:DataType="pizzas:ShopItem">
-                        <StackLayout Orientation="Vertical">
-                            <Label Text="{Binding Name}"/>  
-                            <Label Text="{Binding Address}"/>
+                    <ViewCell x:DataType="pizzas:ShopItem" >
+                        <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                            <Label Text="{Binding Name}" HorizontalOptions="Center" FontSize="Large" FontAttributes="Bold"/>
+                            <Label Text="{Binding Address}" HorizontalOptions="Center"/>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

@@ -9,22 +9,23 @@
              Title="Pizzas">
   <ListView ItemsSource="{Binding Pizzas}"
             SelectionMode="None"
-  >
+             Margin="5"
+             RowHeight="70">
     <ListView.Behaviors>
       <extensions:ListViewItemTappedBehavior Command="{Binding SelectedCommand}"/>
     </ListView.Behaviors>
     <ListView.ItemTemplate>
       <DataTemplate>
         <ViewCell x:DataType="pizzas:PizzaItem">
-          <StackLayout Orientation="Vertical">
+          <StackLayout Orientation="Vertical" VerticalOptions="Center">
             <Label Text="Pizza victime de son succès :'(" IsVisible="{Binding OutOfStock}" />
-            <StackLayout Orientation="Horizontal">
-              <Label Text="{Binding Name}"/>
-              <Label Text=":"/>
-              <Label Text="{Binding Price}"/>
-              <Label Text="$"/>
+              <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+              <Label Text="{Binding Name}" FontSize="Medium" FontAttributes="Bold"/>
+              <Label Text=":" FontSize="Medium" FontAttributes="Bold"/>
+              <Label Text="{Binding Price}" FontSize="Medium" FontAttributes="Bold"/>
+              <Label Text="$" FontSize="Medium" FontAttributes="Bold"/>
             </StackLayout>
-            <Label Text="{Binding Description}"/>
+            <Label Text="{Binding Description}" HorizontalOptions="Center"/>
           </StackLayout>
         </ViewCell>
       </DataTemplate>
